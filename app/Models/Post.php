@@ -12,8 +12,15 @@ class Post extends Model
     protected $tsble = 'posts';
     protected $fillable = [
         'title',
-        'description'
+        'description',
+        'user_id'
     ];
+
+    // <!--~~~~~~~ belongs to relation building starts from here ~~~~~~~~~-->
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 
     // <!--~~~~~~~ one to Many relation building starts from here ~~~~~~~~~-->
     public function comments()

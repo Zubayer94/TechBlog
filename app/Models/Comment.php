@@ -12,12 +12,18 @@ class Comment extends Model
     protected $tsble = 'comments';
     protected $fillable = [
         'comment',
-        'post_id'
+        'post_id',
+        'user_id'
     ];
 
     // <!--~~~~~~~ belongs to relation building starts from here ~~~~~~~~~-->
     public function post()
     {
         return $this->belongsTo('App\Models\Post');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
     }
 }
