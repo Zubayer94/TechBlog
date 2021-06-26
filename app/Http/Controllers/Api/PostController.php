@@ -3,18 +3,29 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\GlobalCollection;
+use App\repositories\PostRepository;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public $postRepository;
+
+    public function __construct(PostRepository $postRepository)
+    {
+        $this->postRepository = $postRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return 'yes';
+        $length = $request->input('length');
+        $posts = $this->postRepository->getAll($length);
+        return new GlobalCollection($posts);
     }
 
     /**

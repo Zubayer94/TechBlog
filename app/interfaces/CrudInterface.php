@@ -2,9 +2,9 @@
 
 namespace App\interfaces;
 
-interface CreudInterface
+interface CrudInterface
 {
-    public function getAll();
+    public function getAll($length);
     public function create($request);
     public function findById($id);
     public function update($id, $request);

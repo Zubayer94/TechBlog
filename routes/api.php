@@ -20,6 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::middleware('auth:api')->group(function () {
+    Route::get('/logout', 'AuthController@logout');
+    Route::get('/user', 'AuthController@getCurrentUser');
+    Route::post('/login', 'AuthController@login')->withoutMiddleware('auth:api');
+    Route::post('/register', 'AuthController@register')->withoutMiddleware('auth:api');
+
     Route::apiResource('/posts', 'PostController');
     Route::get('posts', 'PostController@index')->withoutMiddleware('auth:api');
     Route::get('posts/{postId}', 'PostController@show')->withoutMiddleware('auth:api');

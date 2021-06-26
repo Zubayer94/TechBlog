@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use App\Models\Comment;
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CommentFactory extends Factory
@@ -22,7 +24,9 @@ class CommentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'comment' => $this->faker->paragraph($nbSentences = 1, $variableNbSentences = true),
+            'post_id' => Post::factory()->create(),
+            'user_id' => User::factory()->create(),
         ];
     }
 }

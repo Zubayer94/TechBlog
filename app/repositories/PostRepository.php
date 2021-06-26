@@ -1,16 +1,16 @@
 <?php
 
-namespace App\repositories\PostRepository;
+namespace App\repositories;
 
 use App\Http\Resources\GlobalCollection;
-use App\interfaces\CreudInterface;
+use App\interfaces\CrudInterface;
 use App\Models\Post;
 
-class PostRepository implements CreudInterface
+class PostRepository implements CrudInterface
 {
-    public function getAll()
+    public function getAll($length)
     {
-        $posts = Post::select('title', 'description')->all();
+        $posts = Post::select('id', 'title', 'description')->paginate($length);
         return new GlobalCollection($posts);
     }
 
