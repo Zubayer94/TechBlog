@@ -29,4 +29,5 @@ Route::middleware('auth:api')->group(function () {
     Route::get('posts', 'PostController@index')->withoutMiddleware('auth:api');
     Route::get('posts/{postId}', 'PostController@show')->withoutMiddleware('auth:api');
     Route::post('comment', 'CommentController@store');
+    Route::get('users', 'UserListController@index');
 });

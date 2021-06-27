@@ -7,6 +7,7 @@ import About from './pages/about'
 import Contact from './pages/contact'
 import Error from './error'
 import Post from './pages/post/post'
+import Users from './pages/allUsers/Users'
 
 const mainRoutes = () => {
     return (
@@ -17,6 +18,7 @@ const mainRoutes = () => {
                 <Route exact path="/about" component={About} />
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/post/:id" component={Post} />
+                <Route exact path="/users" component={Users} />
                 <Route component={Error} />
             </Switch>
             <Footer />
