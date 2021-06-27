@@ -15,8 +15,8 @@ class UserListController extends Controller
         $length = $request->input('length');
         $orderby = $request->input('orderby');
 
-        $filled = array_filter($request->only(['name', 'email']));
-        $users = User::select('id', 'name', 'email')
+        $filled = array_filter($request->only(['name', 'email', 'website']));
+        $users = User::select('id', 'name', 'email', 'website')
             ->when(!empty($filled) > 0, function ($query) use ($filled) {
                 foreach ($filled as $column => $value) {
                     $query->where($column, 'like', '%' . $value . '%');

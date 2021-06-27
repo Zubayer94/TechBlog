@@ -106,7 +106,7 @@ const Users = () => {
                                                 <th scope="col" onClick={() => handleShort('email')} style={{cursor: 'pointer'}} >
                                                     Email
                                                 </th>
-                                                <th scope="col">Website</th>
+                                                <th scope="col" onClick={() => handleShort('website')} style={{cursor: 'pointer'}} >Website</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -114,7 +114,7 @@ const Users = () => {
                                                 <tr key={user.id} onClick={() => reidrectUserProfile(user.id)} style={{cursor: 'pointer'}}>
                                                     <td>{user.name}</td>
                                                     <td>{user.email}</td>
-                                                    <td>N/A</td>
+                                                    <td>{ !!user?.website ? user.website : '_'}</td>
                                                 </tr>
                                             ))}
                                             

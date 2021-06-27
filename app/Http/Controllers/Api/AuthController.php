@@ -38,6 +38,7 @@ class AuthController extends Controller
         $rules = [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            'website' => 'nullable|url|max:250',
             'password' => 'required|string|min:6|confirmed',
         ];
         $validator = Validator::make($request->all(), $rules);
@@ -46,7 +47,7 @@ class AuthController extends Controller
             return response()->json($errors, 404);
         }
 
-        $userData = $request->only(['name', 'email']);
+        $userData = $request->only(['name', 'email', 'website']);
         $userData['password'] = bcrypt($request->password);
         try {
             $user = User::create($userData);

@@ -3264,6 +3264,12 @@ var Users = function Users() {
                         children: "Email"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
                         scope: "col",
+                        onClick: function onClick() {
+                          return handleShort('website');
+                        },
+                        style: {
+                          cursor: 'pointer'
+                        },
                         children: "Website"
                       })]
                     })
@@ -3281,7 +3287,7 @@ var Users = function Users() {
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
                           children: user.email
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
-                          children: "N/A"
+                          children: !!(user !== null && user !== void 0 && user.website) ? user.website : '_'
                         })]
                       }, user.id);
                     })
@@ -4764,13 +4770,18 @@ var register = function register() {
 
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState6 = _slicedToArray(_useState5, 2),
-      password = _useState6[0],
-      setPassword = _useState6[1];
+      website = _useState6[0],
+      setWebsite = _useState6[1];
 
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState8 = _slicedToArray(_useState7, 2),
-      password_confirmation = _useState8[0],
-      setPassword_confirmation = _useState8[1];
+      password = _useState8[0],
+      setPassword = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      password_confirmation = _useState10[0],
+      setPassword_confirmation = _useState10[1];
 
   var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_store_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_2__.AuthContext),
       userRegister = _useContext.userRegister,
@@ -4782,6 +4793,7 @@ var register = function register() {
     var userinfo = {
       name: name,
       email: email,
+      website: website,
       password: password,
       password_confirmation: password_confirmation
     };
@@ -4826,8 +4838,7 @@ var register = function register() {
           type: "text",
           placeholder: "Name"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_utils_Validation__WEBPACK_IMPORTED_MODULE_3__.default, {
-          errorText: getError('name'),
-          type: "email"
+          errorText: getError('name')
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "form-group",
@@ -4840,8 +4851,20 @@ var register = function register() {
           type: "email",
           placeholder: "Email"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_utils_Validation__WEBPACK_IMPORTED_MODULE_3__.default, {
-          errorText: getError('email'),
-          type: "email"
+          errorText: getError('email')
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+          className: "form-control signupInput",
+          onChange: function onChange(e) {
+            setWebsite(e.target.value), clearError('website');
+          },
+          value: website,
+          type: "text",
+          placeholder: "Website"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_utils_Validation__WEBPACK_IMPORTED_MODULE_3__.default, {
+          errorText: getError('website')
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "form-group",
@@ -4854,8 +4877,7 @@ var register = function register() {
           type: "password",
           placeholder: "Password"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_utils_Validation__WEBPACK_IMPORTED_MODULE_3__.default, {
-          errorText: getError('password'),
-          type: "email"
+          errorText: getError('password')
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "form-group",
@@ -4868,8 +4890,7 @@ var register = function register() {
           type: "password",
           placeholder: "Confirm Password"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_utils_Validation__WEBPACK_IMPORTED_MODULE_3__.default, {
-          errorText: getError('password_confirmation'),
-          type: "email"
+          errorText: getError('password_confirmation')
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "form-group",
