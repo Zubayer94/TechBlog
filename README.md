@@ -37,7 +37,7 @@ A simple blog application using ReactJS as a frontend Javascript Framework. Deve
 ⚡️ Manage state with context api and laravel api call.\
 ⚡️ Set protected routes routes with auth.\
 ⚡️ Show all users list which is shortable(on clicking table head), searchable, with pagination
-load users according to the state, clicking user entity redirects to user profile.\
+load users according to the state, clicking user entity redirects to user profile.
 
 ---
 
@@ -48,4 +48,4 @@ load users according to the state, clicking user entity redirects to user profil
 🪓 axios\
 🪓 react-bootstrap\
 🪓 react-js-pagination\
-🪓 react-router-dom\
+🪓 react-router-dom
