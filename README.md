@@ -23,3 +23,16 @@ A simple blog application using ReactJS as a frontend Javascript Framework. Deve
 -   Now run `php artisan optimize:clear`.
 -   Finallyrun `npm run dev` which will run your app on local server.
 -   That's It, You can modify and create a pull request, Thanks.
+
+## Features
+
+-   Laravel/Passport Authentication
+-   Followed design patterns
+-   Globally Add posts and load post with increment of 10
+-   Add commnets to the corresponding posts
+-   Show auth user post on profile
+-   Update & Delete auth user post
+-   Manage state with context api
+-   Set protected routes routes with auth
+-   Show all users list which is shortable(on clicking table head), searchable, with pagination
+    load users according to the state, clicking user entity redirects to user profile.

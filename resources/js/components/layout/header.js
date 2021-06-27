@@ -15,8 +15,8 @@ const header = ({type, payload}) => {
                         <div className="row gx-4 gx-lg-5 justify-content-center">
                             <div className="col-md-10 col-lg-8 col-xl-7">
                                 <div className="site-heading">
-                                    <h1>Clean Blog</h1>
-                                    <span className="subheading">A Blog Theme by Start Bootstrap</span>
+                                    <h1>Tech Blog</h1>
+                                    <span className="subheading">A Blog created by Laravel and React.js</span>
                                 </div>
                             </div>
                         </div>
