@@ -1,4 +1,6 @@
 import React from 'react'
+import { DateTime } from "luxon";
+import { Link } from 'react-router-dom';
 
 const indexPostView = ({post}) => {
     const filterWords = (text, textLength) => {
@@ -9,17 +11,19 @@ const indexPostView = ({post}) => {
             return text;
         }
     } 
+    const formateDate = (date) => {
+        const nDate = DateTime.fromISO(date)
+        return nDate.toLocaleString(DateTime.DATETIME_MED);
+    }
     return (
         <div>
             <div className="post-preview">
-                <a href="post.html">
+                <Link to={`/post/${post.id}`}>
                     <h2 className="post-title">{post.title}</h2>
                     <h3 className="post-subtitle">{filterWords(post.description, 80)}</h3>
-                </a>
+                </Link>
                 <p className="post-meta">
-                    Posted by
-                    <a href="#!">Start Bootstrap</a>
-                    on September 24, 2021
+                    Posted by <b>{post.user.name}</b> on {formateDate(post.created_at)}
                 </p>
             </div>
             {/* Divider*/}

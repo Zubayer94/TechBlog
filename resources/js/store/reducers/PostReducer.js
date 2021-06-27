@@ -4,10 +4,11 @@ export const PostReducer = (posts, action) => {
             return [...action.posts]
 
         case 'postAdded':
-            return [...posts, { 
-                title: action.post.title,
-                description: action.post. description,
-            }]
+            return [{ ...action.post}, ...posts]
+            // return [{ 
+            //     title: action.post.title,
+            //     description: action.post.description,
+            // }, ...posts]
 
         case 'postUpdated':
             return posts.map(post => {

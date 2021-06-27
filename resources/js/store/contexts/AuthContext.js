@@ -1,8 +1,10 @@
 import { createContext, useState} from "react";
+import {useHistory} from 'react-router-dom';
 
 export const AuthContext = createContext()
 
 const AuthContextProvider = (props) => {
+    const history = useHistory();
     const [user, setUser] = useState('')
     const [responeloading, setResponeloading] = useState(false)
     const [formError, setFormError] = useState('');
@@ -22,6 +24,7 @@ const AuthContextProvider = (props) => {
             }
             setUser(userResponse);
             localStorage.setItem('user', JSON.stringify(userResponse));
+            setIsLoggedIn(true)
             setResponeloading(false)
         })
         .catch(error => {
@@ -47,6 +50,7 @@ const AuthContextProvider = (props) => {
         setUser('')
         setIsLoggedIn(false)
         localStorage.removeItem('user')
+        history.push('/');
     }
     return (
         <AuthContext.Provider value={{user, userLogin, setUser, logout, userRegister, formError, isLoggedIn, responeloading}}>

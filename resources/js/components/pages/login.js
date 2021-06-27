@@ -1,10 +1,10 @@
 import React, {useState, useContext} from 'react'
-import {Redirect, Link, useHistory} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import '../../theme/css/login.css'
 import { AuthContext } from '../../store/contexts/AuthContext'
 import Validation from '../../utils/Validation'
 
-const login = ({location}) => {
+const login = () => {
     const history = useHistory();
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')

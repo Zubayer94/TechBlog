@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\GlobalCollection;
 use App\repositories\PostRepository;
-use Illuminate\Http\Request;
+
 
 class PostController extends Controller
 {
@@ -36,7 +38,22 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'title' => 'required|string|max:250',
+            'description' => 'required|string',
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            $errors = $validator->errors();
+            return response()->json($errors, 404);
+        }
+
+        try {
+            $post = $this->postRepository->create($request);
+            return response()->json(['response' => 'success', 'post' => $post], 200);
+        } catch (\Illuminate\Database\QueryException $ex) {
+            return response()->json(['response' => $ex->getMessage()], 404);
+        }
     }
 
     /**
@@ -47,7 +64,12 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        try {
+            $post = $this->postRepository->findById($id);
+            return response()->json(['response' => 'Success', 'post' => $post], 200);
+        } catch (\Illuminate\Database\QueryException $ex) {
+            return response()->json(['response' => $ex->getMessage()], 404);
+        }
     }
 
     /**
@@ -59,7 +81,22 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'title' => 'required|string|max:250',
+            'description' => 'required|string',
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            $errors = $validator->errors();
+            return response()->json($errors, 404);
+        }
+
+        try {
+            $post = $this->postRepository->update($request, $id);
+            return response()->json(['response' => 'Post Updated successfully', 'post' => $post], 200);
+        } catch (\Illuminate\Database\QueryException $ex) {
+            return response()->json(['response' => $ex->getMessage()], 404);
+        }
     }
 
     /**
@@ -70,6 +107,11 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $post = $this->postRepository->delete($id);
+            return response()->json(['response' => 'Success', 'post' => $post], 200);
+        } catch (\Illuminate\Database\QueryException $ex) {
+            return response()->json(['response' => $ex->getMessage()], 404);
+        }
     }
 }

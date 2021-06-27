@@ -19,11 +19,11 @@ class Comment extends Model
     // <!--~~~~~~~ belongs to relation building starts from here ~~~~~~~~~-->
     public function post()
     {
-        return $this->belongsTo('App\Models\Post');
+        return $this->belongsTo(Post::class);
     }
 
     public function user()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo(User::class);
     }
 }
