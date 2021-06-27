@@ -26,13 +26,13 @@ A simple blog application using ReactJS as a frontend Javascript Framework. Deve
 
 ## Features
 
--   Laravel/Passport Authentication
--   Followed design patterns
--   Globally Add posts and load post with increment of 10
--   Add commnets to the corresponding posts
--   Show auth user post on profile
--   Update & Delete auth user post
--   Manage state with context api
--   Set protected routes routes with auth
+-   Laravel/Passport Authentication.
+-   Followed design patterns.
+-   Globally Add posts and `load more` button to increment 10 posts more.
+-   Add commnets to the corresponding posts.
+-   Show auth user post on profile.
+-   Update & Delete auth user post.
+-   Manage state with context api and laravel api call.
+-   Set protected routes routes with auth.
 -   Show all users list which is shortable(on clicking table head), searchable, with pagination
     load users according to the state, clicking user entity redirects to user profile.
