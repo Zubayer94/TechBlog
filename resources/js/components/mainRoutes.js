@@ -5,9 +5,8 @@ import Footer from './layout/footer'
 import Index from './pages/home/index'
 import About from './pages/about'
 import Contact from './pages/contact'
-import Error from './error'
-import Post from './pages/post/post'
-import Users from './pages/allUsers/Users'
+import PrivateRoute from '../routes/PrivateRoute'
+import SeparatedRoutes from './separatedRoutes'
 
 const mainRoutes = () => {
     return (
@@ -17,9 +16,9 @@ const mainRoutes = () => {
                 <Route exact path="/" component={Index} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/contact" component={Contact} />
-                <Route exact path="/post/:id" component={Post} />
-                <Route exact path="/users" component={Users} />
-                <Route component={Error} />
+                <PrivateRoute>
+                    <SeparatedRoutes />
+                </PrivateRoute>
             </Switch>
             <Footer />
         </>

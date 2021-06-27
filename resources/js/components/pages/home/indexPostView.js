@@ -16,7 +16,7 @@ const indexPostView = ({post}) => {
         return nDate.toLocaleString(DateTime.DATETIME_MED);
     }
     return (
-        <div>
+        <>
             <div className="post-preview">
                 <Link to={`/post/${post.id}`}>
                     <h2 className="post-title">{post.title}</h2>
@@ -28,7 +28,7 @@ const indexPostView = ({post}) => {
             </div>
             {/* Divider*/}
             <hr className="my-4" />
-        </div>
+        </>
     )
 }
 

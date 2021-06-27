@@ -29,7 +29,7 @@ const navigationTab = () => {
                                         <Link className="nav-link px-lg-3 py-3 py-lg-4" to="/users">All Users</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Profile</a>
+                                        <Link className="nav-link px-lg-3 py-3 py-lg-4" to="/profile">Profile</Link>
                                     </li>
                                     <li className="nav-item">
                                         <a className="nav-link px-lg-3 py-3 py-lg-4" href="#" onClick={() => logout()} >Logout</a>

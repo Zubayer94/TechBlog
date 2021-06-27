@@ -3,13 +3,10 @@ import { PostContext } from '../../../store/contexts/PostContext'
 import IndexPostView from './indexPostView'
 import Header from '../../layout/header'
 import IndexPostForm from './indexPostForm'
-import { AuthContext } from '../../../store/contexts/AuthContext'
 
 const index = () => {
     const [length, setLength] = useState(10)
     const {posts, dispatch} = useContext(PostContext)
-    const {isLoggedIn} = useContext(AuthContext)
-    console.log(isLoggedIn);
     useEffect(async() => {
         await axios.get(`/posts?length=${length}`)
         .then(({data:{data}}) => dispatch({ type: 'setAllPost', posts: data}))

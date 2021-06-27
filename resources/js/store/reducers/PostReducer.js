@@ -5,24 +5,18 @@ export const PostReducer = (posts, action) => {
 
         case 'postAdded':
             return [{ ...action.post}, ...posts]
-            // return [{ 
-            //     title: action.post.title,
-            //     description: action.post.description,
-            // }, ...posts]
 
         case 'postUpdated':
             return posts.map(post => {
-                if (post.id == action.id) {
+                if (post.id == action.post.id) {
                     post.title = action.post.title;
                     post.description = action.post.description;
                 }
                 return post;
             })
-            // console.log('new posts',posts);
-            // return [posts]
 
         case 'PostRemoved':
-            return state.filter(post => post.id !== action.id)
+            return posts.filter(post => post.id !== action.id)
     
         default:
             return posts;

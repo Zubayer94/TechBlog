@@ -34,7 +34,7 @@ class PostRepository implements CrudInterface
 
     public function update(Request $request, $id)
     {
-        $post = Post::findOrfail($id);
+        $post = Post::with(['user', 'comments.user'])->findOrfail($id);
         $data = $request->only(['title', 'description']);
         $post->fill($data)->save();
         return $post;

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -58,6 +59,14 @@ class AuthController extends Controller
     public function getCurrentUser(Request $request)
     {
         return $request->user()->load('comments');
+    }
+
+    public function getAuthPosts()
+    {
+        $authPosts = Post::with(['user', 'comments'])
+            ->where('user_id', auth()->user()->id)
+            ->get();
+        return response()->json(['response' => 'success', 'authPosts' => $authPosts], 200);
     }
 
     public function logout()

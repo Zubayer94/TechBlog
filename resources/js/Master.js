@@ -4,30 +4,33 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import PostContextProvider from './store/contexts/PostContext';
 import AuthContextProvider from './store/contexts/AuthContext';
+import AuthPostsContextProvider from './store/contexts/AuthPostsContext';
 import Login from './components/pages/login'
 import Register from './components/pages/register'
 import MainRoutes from './components/mainRoutes';
 import PublicRoute from './routes/PublicRoute'
-import PrivateRoute from './routes/PrivateRoute'
+import CommonRoute from './routes/CommonRoute'
 
 function Master() {
     return (
         <>
             <Router>
                 <AuthContextProvider>
-                    <PostContextProvider>
-                        <Switch>
-                            <PublicRoute exact path="/login">
-                                <Login />
-                            </PublicRoute>
-                            <PublicRoute exact path="/signup">
-                                <Register />
-                            </PublicRoute>
-                            <PrivateRoute path="/">
-                                <MainRoutes />
-                            </PrivateRoute>
-                        </Switch>
-                    </PostContextProvider>
+                    <AuthPostsContextProvider>
+                        <PostContextProvider>
+                            <Switch>
+                                <PublicRoute exact path="/login">
+                                    <Login />
+                                </PublicRoute>
+                                <PublicRoute exact path="/signup">
+                                    <Register />
+                                </PublicRoute>
+                                <CommonRoute path="/">
+                                    <MainRoutes />
+                                </CommonRoute>
+                            </Switch>
+                        </PostContextProvider>
+                    </AuthPostsContextProvider>
                 </AuthContextProvider>
             </Router>
         </>

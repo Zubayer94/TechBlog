@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Redirect, Route} from 'react-router-dom';
+import { AuthContext } from '../store/contexts/AuthContext';
 
 const PublicRoute = ({children, ...rest}) => {
+    const { isLoggedIn } = useContext(AuthContext)
     return (
         <Route
             {...rest}
-            render={({location}) => (
+            render={({location}) =>
+                !! isLoggedIn ? (
+                    <Redirect
+                        to={{
+                            pathname: '/',
+                            state: {from: location}
+                        }}
+                    />
+                ) : (
                     children
                 )
             }
@@ -14,26 +24,3 @@ const PublicRoute = ({children, ...rest}) => {
 };
 
 export default PublicRoute;
-// const PublicRoute = ({children, isLoggedIn, ...rest}) => {
-//     const isAuthenticated = isLoggedIn || localStorage.getItem('token');
-
-//     return (
-//         <Route
-//             {...rest}
-//             render={({location}) =>
-//                 isAuthenticated ? (
-//                     <Redirect
-//                         to={{
-//                             pathname: '/',
-//                             state: {from: location}
-//                         }}
-//                     />
-//                 ) : (
-//                     children
-//                 )
-//             }
-//         />
-//     );
-// };
-
-// export default PublicRoute;

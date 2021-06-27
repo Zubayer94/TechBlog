@@ -15,6 +15,9 @@ const post = ({match}) => {
             setComments(data.post.comments)
             setComment('')
         })
+        .catch(err => {
+            console.log(err)
+        })
     }
     const createNewComment = async(e) => {
         e.preventDefault();

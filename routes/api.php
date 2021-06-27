@@ -22,6 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::middleware('auth:api')->group(function () {
     Route::get('/logout', 'AuthController@logout');
     Route::get('/user', 'AuthController@getCurrentUser');
+    Route::get('/getAuthPosts', 'AuthController@getAuthPosts');
     Route::post('/login', 'AuthController@login')->withoutMiddleware('auth:api');
     Route::post('/register', 'AuthController@register')->withoutMiddleware('auth:api');
 
@@ -30,4 +31,5 @@ Route::middleware('auth:api')->group(function () {
     Route::get('posts/{postId}', 'PostController@show')->withoutMiddleware('auth:api');
     Route::post('comment', 'CommentController@store');
     Route::get('users', 'UserListController@index');
+    Route::get('user/{id}', 'UserListController@getUser');
 });
