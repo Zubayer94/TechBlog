@@ -9,7 +9,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $tsble = 'posts';
+    protected $table = 'posts';
     protected $fillable = [
         'title',
         'description',

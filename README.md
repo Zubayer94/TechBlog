@@ -21,7 +21,8 @@ A simple blog application using ReactJS as a frontend Javascript Framework. Deve
 -   run `php artisan passport:install` for generating access tokens.
 -   Now run `php artisan db:seed`, for seeding data to the database.
 -   Now run `php artisan optimize:clear`.
--   Finallyrun `npm run dev` which will run your app on local server.
+-   For setting base url go to `root/js/bootstrap.js` file, find `window.axios.defaults.baseURL = 'http://demo-site.test/api'` fill url to call API from backend.
+-   Finally run `npm run dev` which will run your app on local server.
 -   That's It, You can modify and create a pull request, Thanks.
 
 ---
@@ -31,13 +32,13 @@ A simple blog application using ReactJS as a frontend Javascript Framework. Deve
 ⚡️ Laravel/Passport Authentication.\
 ⚡️ Followed design patterns.\
 ⚡️ Globally Add posts and `load more` button to increment 10 posts more.\
-⚡️ Add commnets to the corresponding posts.\
+⚡️ Add comments to the corresponding posts.\
 ⚡️ Show auth user post on profile.\
 ⚡️ Update & Delete auth user post.\
 ⚡️ Manage state with context api and laravel api call.\
-⚡️ Set protected routes routes with auth.\
+⚡️ Set protected routes with auth.\
 ⚡️ Show all users list which is shortable(on clicking table head), searchable, with pagination
-load users according to the state, clicking user entity redirects to user profile.
+load users according to the state, clicking user entity redirects to the user profile.
 
 ---
 

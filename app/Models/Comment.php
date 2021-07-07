@@ -9,7 +9,7 @@ class Comment extends Model
 {
     use HasFactory;
 
-    protected $tsble = 'comments';
+    protected $table = 'comments';
     protected $fillable = [
         'comment',
         'post_id',
