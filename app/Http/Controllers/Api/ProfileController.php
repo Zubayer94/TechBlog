@@ -43,7 +43,9 @@ class ProfileController extends Controller
     public function show($id)
     {
         try {
+
             $foundAuthPost = $this->postRepository->findById($id);
+
             return response()->json(['response' => 'Success', 'foundAuthPost' => $foundAuthPost], 200);
         } catch (\Illuminate\Database\QueryException $ex) {
             return response()->json(['response' => $ex->getMessage()], 404);
