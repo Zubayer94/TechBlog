@@ -5668,7 +5668,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".login-form {\r\n    width: 340px;\r\n    margin: 150px auto;\r\n}\r\n.login-form form {\r\n    margin-bottom: 15px;\r\n    background: #f7f7f7;\r\n    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n    padding: 30px;\r\n}\r\n.login-form h2 {\r\n    margin: 0 0 15px;\r\n}\r\n.loginInput,\r\n.loginBtn {\r\n    min-height: 38px;\r\n    border-radius: 2px;\r\n}\r\n.loginBtn {\r\n    font-size: 15px;\r\n    font-weight: bold;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".login-form {\n    width: 340px;\n    margin: 150px auto;\n}\n.login-form form {\n    margin-bottom: 15px;\n    background: #f7f7f7;\n    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\n    padding: 30px;\n}\n.login-form h2 {\n    margin: 0 0 15px;\n}\n.loginInput,\n.loginBtn {\n    min-height: 38px;\n    border-radius: 2px;\n}\n.loginBtn {\n    font-size: 15px;\n    font-weight: bold;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5692,7 +5692,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".signup-form {\r\n    width: 340px;\r\n    margin: 150px auto;\r\n}\r\n.signup-form form {\r\n    margin-bottom: 15px;\r\n    background: #f7f7f7;\r\n    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n    padding: 30px;\r\n}\r\n.signup-form h2 {\r\n    margin: 0 0 15px;\r\n}\r\n.signupInput,\r\n.signupBtn {\r\n    min-height: 38px;\r\n    border-radius: 2px;\r\n}\r\n.signupBtn {\r\n    font-size: 15px;\r\n    font-weight: bold;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".signup-form {\n    width: 340px;\n    margin: 150px auto;\n}\n.signup-form form {\n    margin-bottom: 15px;\n    background: #f7f7f7;\n    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\n    padding: 30px;\n}\n.signup-form h2 {\n    margin: 0 0 15px;\n}\n.signupInput,\n.signupBtn {\n    min-height: 38px;\n    border-radius: 2px;\n}\n.signupBtn {\n    font-size: 15px;\n    font-weight: bold;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
